@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Andrew's Projects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #fdfdfd;
+      --text: #222;
+      --card-bg: #ffffff;
+      --accent: #007bff;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #eee;
+      --card-bg: #1e1e1e;
+      --accent: #66aaff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 2rem;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .toggle {
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.4;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Andrew's Projects</h1>
+    <div class="toggle" onclick="document.body.classList.toggle('dark')">
+      🌓 Toggle Theme
+    </div>
+  </header>
+
+  <section class="projects">
+    <div class="card">
+      <h2>Game Engine - RealEngine</h2>
+      <p>A hobby project exploring game engine architecture and design. Using Premake as the buildsystem.</p>
+      <a href="https://github.com/Andthehand/RealEngine" target="_blank">
+        <i class="fab fa-github"></i> View on GitHub
+      </a>
+    </div>
+
+    <div class="card">
+      <h2>Game Engine - RealEngine-V2</h2>
+      <p>A spiritual successor to RealEngine, focusing on performance and data-oriented design. Using CMake as the buildsystem for a more portable solution.</p>
+      <a href="https://github.com/Andthehand/RealEngine-V2" target="_blank">
+        <i class="fab fa-github"></i> View on GitHub
+      </a>
+    </div>
+
+    <div class="card">
+      <h2>RealEngine-Editor</h2>
+      <p>A tool for editing and managing game scenes and assets within the RealEngine-V2 ecosystem.</p>
+      <a href="https://github.com/Andthehand/RealEngine-Editor" target="_blank">
+        <i class="fab fa-github"></i> View on GitHub
+      </a>
+    </div>
+
+    <div class="card">
+      <h2>Quadcopter DroneController</h2>
+      <p>A project focused on controlling a quadcopter drone using a Raspberry Pi Pico W as the brain, paired with a custom PCB featuring a gyroscope and designed for future expansion.</p>
+      <a href="https://github.com/Andthehand/Quadcopter-DroneController" target="_blank">
+        <i class="fab fa-github"></i> View on GitHub
+      </a>
+    </div>
+
+    <div class="card">
+      <h2>DroneControllerGUI</h2>
+      <p>A graphical user interface for controlling my custom drone controller essentially acting as a controller and debugger. This is built on top of my RealEngine-V2 game engine.</p>
+      <a href="https://github.com/Andthehand/DroneControllerGUI" target="_blank">
+        <i class="fab fa-github"></i> View on GitHub
+      </a>
+    </div>
+
+    <div class="card">
+      <h2>RP2040 Tetris</h2>
+      <p>I created a version of Tetris using a Raspberry Pi Pico and a custom PCB housing approximately 200 addressable LEDs.</p>
+      <a href="https://github.com/Andthehand/Tetris" target="_blank">
+        <i class="fab fa-github"></i> View on GitHub
+      </a>
+    </div>
+    
+    <div class="card">
+      <h2>Submodule Hash GitHub Action</h2>
+      <p>A GitHub Action that generates a SHA-256 hash of your submodule state — perfect for enabling precise, cache-aware builds in Continuous Integration workflows.</p>
+      <a href="https://github.com/marketplace/actions/submodule-hash" target="_blank">
+        <i class="fab fa-github"></i> View on GitHub
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Andrew DeFord — Built with ❤️ and HTML
+  </footer>
+
+  <script>
+    // Optional: Save theme preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) document.body.classList.add('dark');
+  </script>
+</body>
+</html>
